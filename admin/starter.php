@@ -2,6 +2,9 @@
 	session_start();
 	include "../security/secure.php";
 	include "../includes/define.php";
+
+echo "hello";
+
 ?>
 
 
