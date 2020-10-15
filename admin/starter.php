@@ -3,7 +3,7 @@
 	include "../security/secure.php";
 	include "../includes/define.php";
 
-echo "hello";
+echo "hello my dear";
 
 ?>
 
