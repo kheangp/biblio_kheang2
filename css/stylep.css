@@ -1,0 +1,300 @@
+
+
+.nav-item:hover  .mborder{
+	
+	width: 15px;
+	height : 2px;
+	border-radius:5%;
+	background-color  : green;
+	
+	
+}
+
+
+/*main*/
+main a
+{
+	text-decoration:none;
+}
+
+main a:hover
+{
+	text-decoration:none;
+}
+
+.zone0 .btn
+{
+	box-shadow : 0.5rem 1rem 0.5rem #A8C3B6;
+	
+}
+.zone0 
+{
+	background: linear-gradient(145deg, #E7DCFF, #CDF5EA);
+	height : 35rem;
+	
+	
+}
+#journey 
+{
+	background-color : #6B39BD;
+	
+}
+
+
+.zone1 img 
+{ /*conserve ratio*/
+	max-width:90%;
+	height: auto;
+	
+}
+
+.zone2 
+{
+	
+	height : 40rem;
+	margin-top:10rem;
+	
+}
+
+.nav-item:hover  .mborders{
+	
+	width: 15px;
+	height : 3px;
+	border-radius:5%;
+	background-color  : #6B39BD;
+	
+	
+}
+
+.zone3 
+{
+	background: linear-gradient(180deg, #E7DCFF, #CDF5EA);
+	
+	
+}
+
+.liste2 img{
+	
+	
+	max-width:25rem;
+}
+
+.liste2 a
+
+{
+	color:black;
+	
+
+}
+
+.liste2 a:hover
+
+{
+	color:#31C77F;
+}
+
+.zone4
+{
+	height : 10rem;
+	background-color:#6B39BD;
+	margin-top : 5rem;
+	margin-bottom : 5rem;
+}
+
+.zone5 img
+{
+	
+	width : 50rem;
+}
+
+
+/**COMPTEUR*/
+
+.compteur b
+{
+	color : #31C77F;
+}
+
+.zone6
+{
+height: 20rem;	
+}
+
+
+.zone6 .temoin {  /*cercle :assigner à votre balise div la forme d'un carré et de lui arrondir les bords de la moitié de la longueur d'un côté.*/
+	
+	width : 64px;
+	height  : 64px;
+	border-radius : 50%; 
+	
+	
+	
+}
+
+
+.zone7
+{
+	background-color: DFFFF0; 
+	height:20rem;
+	justify-content : center;
+}
+
+
+.zone7 a:hover
+{
+	background-color: #5A329E;
+	
+}
+
+#intense
+{
+	background-color: #6B39BD;
+	box-shadow: 0.5rem 1rem 0.5rem #C3E0D2;
+	
+}
+
+#features
+
+{
+	
+	height : 50rem;
+}
+
+
+zone9
+{
+	height:30rem;
+	background-color: #23232F;
+	color : #C8C8CB;
+}
+
+.zone9 img
+{
+	text-align :center;
+	height:25rem;
+}
+
+
+
+
+
+ .recherche img
+{
+		width: 20px;
+		height: 20px;
+}
+
+
+
+.policy a
+{
+	color : white;
+}
+.policy 	a:hover
+{
+	color :  ;
+}
+.contact a
+{
+	font-weight : bold;
+	color: #6B39BD;
+}
+
+.contact a:hover
+{
+	color:white;
+}
+
+.temoignage
+{
+	background-image: images/etoile.png
+}
+
+
+#bas
+{	
+
+	background-color:#23232F;
+	color : white;
+}
+
+
+#email 
+{
+	width: 13rem;
+	height :2.7rem ;
+	border-radius : 5px;
+
+}
+
+
+/*titrelist déclaré dans fonction affiche() script.js*/
+
+.titreliste  a:hover  
+{
+	color:#31C77F;
+	
+} 
+.titreliste  a
+{
+	color:#AEAEB2;
+	
+} 
+
+.titreliste 
+{
+		column-count: 3;
+		font-size: 14px;  
+		color : #AEAEB2;
+
+}
+
+
+hr
+{
+	background-color: #3E3E49;
+}
+
+
+
+/*footer*/
+
+.pied
+{
+	background-color: #23232F;
+	color : #AEAEB2;
+	padding : 20px;
+	font-size: 14px;
+}
+.containerp
+{
+	padding : 25px;
+	
+}
+
+.tel
+{
+ 
+font-size: 18px;  
+}
+
+
+.reseausociaux a
+{
+	color : white;
+	
+	
+}
+
+#ascenseur
+{
+	background-color : #31C77F;
+	
+	position : fixed;
+	bottom: 50px;
+	right: 30px;
+	height :50px;
+	width : 50px;
+	
+}
+
