@@ -55,7 +55,7 @@
 
                 /*Sélectionne les valeurs dans la table livre pour chaque entrée de la table qui sont publiés donc publier.supprimer=0*/
 
-                $sth = $dbco->prepare("SELECT livre.titre, bibliotheque.nom as bibliotheque_nom, livre.id_livre, livre.genre, livre.description, livre.logolivre, auteur.nom as auteur_name, editeur.nom as editeur_name, publier.date_publication 
+                $sth = $dbco->prepare("SELECT livre.*, bibliotheque.nom as bibliotheque_nom, auteur.nom as auteur_name, editeur.nom as editeur_name, publier.date_publication 
 										FROM livre, publier, auteur, editeur, bibliotheque 
 										WHERE livre.id_livre=publier.id_livre 
 												AND publier.id_auteur=auteur.id_auteur 

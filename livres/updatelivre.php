@@ -16,20 +16,24 @@
 		$id_auteur=$_POST['id_auteur'];
 		$id_editeur=$_POST['id_editeur'];
 		$date_publication=$_POST['date_publication'];
+		$description=$_POST['description'];
+		$nb_pages=$_POST['nb_pages'];
+		$prix = $_POST['prix'];
 		
 try{
 
 		// $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $dbuser, $dbpass);
 
 		// $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "UPDATE livre set titre=:titre, id_bibliotheque=:id_bibliotheque, genre=:genre, logolivre=:logo WHERE id_livre=$id_livre";
+		$sql = "UPDATE livre set titre=:titre, id_bibliotheque=:id_bibliotheque, genre=:genre, logolivre=:logo, description=:description, nb_pages=:nb_pages, prix=:prix WHERE id_livre=$id_livre";
 
 		$params=array(':id_bibliotheque' => $id_bibliotheque,
 						':titre' => $titre,
-
 						':genre' => $genre,
-
-						':logo' => $logo         
+						':logo' => $logo ,
+						':prix'=>$prix,
+						':description'=>$description,
+						':nb_pages'=>$nb_pages						
 
 						);
 		$sth = $dbco->prepare($sql);

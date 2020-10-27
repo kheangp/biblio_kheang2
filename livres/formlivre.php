@@ -22,6 +22,8 @@
 			$titre=$result['titre'];
 			$genre=$result['genre'];
 			$logo=$result['logolivre'];
+			$prix=$result['prix'];
+			$nb_pages=$result['nb_pages'];
 		
 				 $action=$route['updatelivre'];
 				 $titreForm=" MODIFIER LIVRE ";
@@ -73,7 +75,7 @@
 
 ?>
 
-		  	      <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 
 <h1><?php echo $titreForm;?></h1>
 
@@ -96,6 +98,11 @@
             </div>
 			
 			<div class="c100">
+                <label for="genre">Description : </label>
+                <input type="text" id="description" name="description" value="<?php echo @$description;?>">
+            </div>
+			
+			<div class="c100">
                 <label for="auteur">Auteur :</label>
                 <select id="id_auteur" name="id_auteur">  <!-- liste déroulante des auteurs disponibles-->
                     <option value="">--Sélectionnez l'auteur</option>
@@ -114,6 +121,17 @@
                         ?>
 				</select>
 			</div>
+
+		<!-- type="number" step="0.01" : decimal avec 2 chiffre après virgule -->
+			<div class="c100">
+                <label for="prix">Prix : </label>
+                <input type="number" step="0.01" id="prix" name="prix" value="<?php echo @$prix;?>"/> €
+            </div> 
+			
+			<div class="c100">
+                <label for="">Nombre de pages : </label>
+                <input type="text" id="nb_pages" name="nb_pages" value="<?php echo @$nb_pages;?>"/> pages
+            </div>
 			
 			<div class="c100">
 			<label for="date_publication">Date de publication</label>
