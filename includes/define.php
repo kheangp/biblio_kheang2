@@ -52,6 +52,8 @@ $route=["bibliolist"=>"../biblios/bibliolist.php",
 		"updateuser"=>"../users/updateuser.php",
 		"deleteuser"=>"../users/deleteuser.php",
 		
+		"livre"=>"template/livre.php",
 		
-			
+		"formemprunt"=>"template/formemprunt.php",
+		"emprunter"=>"template/emprunter.php"
 		];		

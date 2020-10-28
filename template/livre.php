@@ -10,7 +10,7 @@
 				
 			
 
-			$sql = "SELECT livre.titre, livre.genre, livre.description, livre.logolivre as logo, auteur.nom as auteur_name, editeur.nom as editeur_name, publier.date_publication  as date_publication
+			$sql = "SELECT livre.*, auteur.nom as auteur_name, editeur.nom as editeur_name, publier.date_publication  as date_publication
 										FROM livre, publier, auteur, editeur 
 										WHERE livre.id_livre=publier.id_livre 
 												AND publier.id_auteur=auteur.id_auteur 
@@ -20,7 +20,6 @@
 
 			$sth->execute();
 			$livre = $sth->fetch(PDO::FETCH_ASSOC);
-
 			
 			
 		
@@ -53,15 +52,15 @@
 </div>	
 </div>	
 -->
-<div class="container">
+
 	
-		<div class="card livrecard align-center">
+		<div class="card livrecard align-center ">
 			<div class="card-header titrecard"><?php echo $livre['titre']?></div>
 			<div class="row">
 			<div class="col-6">
 				<div class="card">
 					<div class="card-body ">
-						<div class="card-image-top"><img src="uploads/<?php echo $livre['logolivre']?> \"/></div>
+						<div class="card"><img src="uploads/<?php echo $livre['logolivre']?>"/></div>
 					</div>
 				</div>
 			</div>
@@ -72,6 +71,8 @@
 						<p class="card-text">Résumé : <?php echo $livre['description']?></p>
 						<div class="card-text ">EDITEUR : <?php echo $livre['editeur_name']?></div>
 						<p class="card-text genrecard">Genre : <?php echo $livre['genre']?></p>
+						<div class="card-text ">PRIX : <?php echo $livre['prix']?> €</div>
+						<div class="card-text "><?php echo $livre['nb_pages']?> pages</div>
 						<div class="card-text">Publié le : <?php echo date("d-m-Y",strtotime($livre['date_publication']))?></div>
 					</div>
 				</div>
@@ -79,7 +80,7 @@
 			</div>
 	
 		
-	<div class="card-footer"><a href="?page=emprunter" class="btn btn-primary">EMPRUNTER</a> </div>
+			<div class="card-footer"><a href="?page=formemprunt&id=<?php echo $id_livre ?>&title=<?php echo $livre['titre'] ?>" class="btn btn-primary">EMPRUNTER</a> </div>
 			
 		</div>
 </div>	

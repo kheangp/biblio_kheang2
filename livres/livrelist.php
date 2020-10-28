@@ -32,6 +32,7 @@
 						<th>Auteur</th>
 						<th>Editeur</th>
 						<th>Date de publication</th>
+						<th>Prix</th>
 						<th  colspan="2">Action</th>
 					</tr>
 				</thead>
@@ -52,7 +53,7 @@
 
                 /*Sélectionne les valeurs dans la table livre pour chaque entrée de la table qui sont publiés donc publier.supprimer=0*/
 
-                $sth = $dbco->prepare("SELECT livre.titre, bibliotheque.nom as bibliotheque_nom, livre.id_livre, livre.genre, livre.logolivre, auteur.nom as auteur_name, editeur.nom as editeur_name, publier.date_publication 
+                $sth = $dbco->prepare("SELECT livre.titre, livre.prix, bibliotheque.nom as bibliotheque_nom, livre.id_livre, livre.genre, livre.logolivre, auteur.nom as auteur_name, editeur.nom as editeur_name, publier.date_publication 
 										FROM livre, publier, auteur, editeur, bibliotheque 
 										WHERE livre.id_livre=publier.id_livre 
 												AND publier.id_auteur=auteur.id_auteur 
@@ -89,6 +90,7 @@
 						echo "<td>". $liv['editeur_name']."</td>"; 
 						echo "<td>". date("d-m-Y",strtotime($liv['date_publication']))."</td>"; /*You can first use the PHP strtotime() function to convert any textual datetime into Unix timestamp, then simply use the PHP date() function to convert this timestamp into desired date format*/
 						
+						echo "<td>". $liv['prix']." €</td>";
 						
 						echo "<td> <a class='btn btn-info btn-xs' href='starter.php?page=formlivre&id=".$liv['id_livre']."'>Modifier</a></td>";
 						echo "<td> <a class='btn btn-danger btn-xs' href='".$route['deletelivre']."?id=".$liv['id_livre']."'><span class='glyphicon glyphicon-remove'>Supprimer</a></td>";

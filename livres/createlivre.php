@@ -12,7 +12,10 @@
 		$id_auteur = $_POST['id_auteur'];
 		$id_editeur=$_POST['id_editeur'];
 		$date_publication=$_POST['date_publication'];
-		$logo=uploadfile('logo',true);		
+		$logo=uploadfile('logo',true);	
+		$description=$_POST['description'];
+		$nb_pages=$_POST['nb_pages'];
+		$prix = $_POST['prix'];
 		
 		// $servername = 'localhost';
 		// $dbname='bd_kheang_biblio';
@@ -28,11 +31,14 @@
 		  	$params=[   ':id_bibliotheque' =>$id_bibliotheque,                            
 						':titre' => $titre,
 						':genre' => $genre,
-						':logo'=>$logo];
+						':logo'=>$logo,
+						':prix'=>$prix,
+						':description'=>$description,
+						':nb_pages'=>$nb_pages];
 						
 						
-			$sql = "INSERT INTO livre(id_bibliotheque, titre,genre,logolivre)
-					VALUES(:id_bibliotheque,:titre,:genre,:logo)";
+			$sql = "INSERT INTO livre(id_bibliotheque, titre,genre,logolivre,description, nb_pages, prix)
+					VALUES(:id_bibliotheque,:titre,:genre,:logo, :description, :nb_pages, :prix)";
 			
 			 $dbco->prepare($sql)->execute($params);
 			
