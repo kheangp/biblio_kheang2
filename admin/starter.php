@@ -215,9 +215,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
 			  
 			  <li class="nav-item">
-                <a href="?page=emprunter" class="nav-link">
+                <a href="?page=emprunterlist" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Emprunter</p>
+                  <p>Liste des Emprunts</p>
                 </a>
               </li>
 			  
