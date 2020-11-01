@@ -1,6 +1,7 @@
 <?php
 
 	
+		
 	if(@$_GET['id']!=""){
 		@$id_livre=$_GET['id'];
 		@$titre=$_GET['title'];
@@ -24,16 +25,16 @@
 				
 			
 
-			// $sql = "select *  FROM livre WHERE id_livre=$id_livre";
-			// $sth = $dbco->prepare($sql);
+			 $sql = "select logolivre  FROM livre WHERE id_livre=$id_livre";
+			 $sth = $dbco->prepare($sql);
 
-			// $sth->execute();
-			// $result = $sth->fetch(PDO::FETCH_ASSOC);
+			 $sth->execute();
+			 $result = $sth->fetch(PDO::FETCH_ASSOC);
 
 			// $id_bibliotheque=$result['id_bibliotheque'];
 			// $titre=$result['titre'];
 			// $genre=$result['genre'];
-			// $logo=$result['logolivre'];
+			 $logo=$result['logolivre'];
 		
 				 // $action=$route['updatelivre'];
 				 // $titreForm=" MODIFIER LIVRE ";
@@ -96,7 +97,10 @@
 		
 		<input type="hidden" id="id_livre" name="id_livre" value="<?php echo @$id_livre;?>">
 		 
-		 
+		<!-- <div class="c100">
+			<img  class="card-img-top" src='uploads/".<?php echo $logo?>."'></img>
+			  </div>-->
+			
 		 <div class="c100"><label for="titre">Titre : </label>
                 <input type="text" id="titre" name="titre" value="<?php echo @$titre;?>" readonly>
             </div>	
@@ -104,7 +108,8 @@
             <div class="c100">
                 <label for="nom">Nom : </label>
                 <input type="text" id="nom" name="nom">
-            </div>
+			</div>
+			
 			
 			<div class="c100">
                 <label for="nom">Prénom : </label>
