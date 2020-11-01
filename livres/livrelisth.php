@@ -40,8 +40,30 @@
 	</table>
 	-->
 
+
+
+	<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- jQuery UI library -->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+
+	<form action ="search" method="get" class="form-in-line">
+		<div class="input-group">
+			<input type="text" class="form-control" id="search_livre " placeholder="Titre du livre" name="search">
+			
+			<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="submit">Rechercher</button>
+			</div>
+		</div>
+		</form>
 		
         <?php
+				/**** LISTE DES LIVRES SUR HOMEPAGE **/
+				/*************************************/
 				
 				
            // $servname = "localhost"; $dbname = "bd_kheang_biblio"; $user = "root"; $pass = "";
@@ -49,9 +71,21 @@
             try{
                 // $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
                 // $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                
 
-                
+
+				$sth = $dbco->prepare("SELECT distinct genre 
+										FROM livre,publier 
+										WHERE livre.id_livre=publier.id_livre");
+                $sth->execute();
+				$listeGenres= $sth->fetchAll(PDO::FETCH_ASSOC);
+
+			foreach ($listeGenres as $grow => $genre) 
+			{
+
+				
+				echo "<div class='container text-success'>".$genre["genre"]."<div class='row'>";
+
+					
 
                 /*Sélectionne les valeurs dans la table livre pour chaque entrée de la table qui sont publiés donc publier.supprimer=0*/
 
@@ -60,11 +94,12 @@
 										WHERE livre.id_livre=publier.id_livre 
 												AND publier.id_auteur=auteur.id_auteur 
 												AND publier.id_editeur=editeur.id_editeur 
+												AND livre.genre=:genre
 												AND publier.supprimer=false     
 												AND livre.id_bibliotheque=bibliotheque.id_bibliotheque");
 												
-
-                $sth->execute();
+				$params=array("genre"=>$genre["genre"]);
+                $sth->execute($params);
 		
                 /*Retourne un tableau associatif pour chaque entrée de notre table
 
@@ -82,10 +117,10 @@
 					 
 					 echo'<div class="card livrecard">'; /* div card pour débuter la carte*/
 					 
-					 echo "<a href=\"#\"><img  class=\"card-img-top\" src='uploads/". $liv['logolivre']."'></img></a>"; /* affiche image sur toute la largeur de la colonne*/
+					 echo "<img  class=\"card-img-top\" src='uploads/". $liv['logolivre']."'></img>"; /* affiche image sur toute la largeur de la colonne*/
 					echo "<div class=\"card-body\">";
 					echo "<h5 class=\"card-title text-danger titrecard \">". $liv['titre']."</h5>"; 
-					echo "<p class=\"card-text\">".$liv['description']."</p>"; 
+					echo "<p class=\"card-text text-dark \">".$liv['description']."</p>"; 
 					echo "<div class=\"card-text text-primary auteurcard\">". $liv['auteur_name']."</div>"; 
 					echo "<div class=\"card-text text-info\">". $liv['editeur_name']."</div>";
 					echo "<p class=\"card-text genrecard\"><small class=\"text-muted\">". $liv['genre']."</small></p>"; 
@@ -95,7 +130,8 @@
 					
 
 				}
-			
+			}
+					echo "</div></div>";
 
                 /*print_r permet un affichage lisible des résultats,
 
@@ -115,6 +151,29 @@
             }
 
         ?>
+		
+	<script>
+
+
+
+$( document ).ready(function() {
+
+
+$("#search_livre").on('input',function(){
+alert('ok');})
+
+	$("#search_livre").autocomplete({
+			source: "livres/livreapi.php",
+			select: function( event, ui ) {
+					event.preventDefault();
+					$("#search_livre").val(ui.item.value);
+			},
+
+	});
+});
+
+
+</script>
 		
 <!--		
 </div> 

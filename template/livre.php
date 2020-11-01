@@ -38,7 +38,7 @@
 					</div>
 					<div class="col-6">
 						
-						<div class="col-12"><?php echo $livre['titre']?></div>
+						<div class="col-12"><?php /*echo $livre['titre']*/?></div>
 						<div class="col-12">description</div>
 					
 					</div>
