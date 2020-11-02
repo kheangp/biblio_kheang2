@@ -103,7 +103,8 @@
 				<div class="container text-center justify-content-center ">
 					<div class="row">
 					<?php
-							include 'livres/livrelisth.php';
+							include 'livres/recherchelivre.php';
+							include 'livres/livrelisthomep.php';
 					?>
 					</div>
 				</div>
