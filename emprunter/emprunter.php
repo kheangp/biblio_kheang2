@@ -1,3 +1,9 @@
+
+<div class="container">
+<div class="row ">
+
+
+
 <?php
 	
 	
@@ -61,7 +67,7 @@
 				
 				$emprunter=$sth->fetch(PDO::FETCH_ASSOC);
 			
-				echo " Votre emprunt a été enregistré le : " .date("d-m-y", strtotime($emprunter['date_emprunt']));
+				echo " Votre emprunt a bien été enregistré le : " .date("d-m-y", strtotime($emprunter['date_emprunt']));
                   
 			}
 			
@@ -73,6 +79,8 @@
 					
 	}
 ?>
-<div class="container">
-<a href="homepage.php" class="btn btn-primary" >Homepage</a>
+</div>
+<div class="row"><a href="homepage.php" class="btn btn-primary" >Homepage</a>
+</div>
+</div>
 </div>

@@ -7,6 +7,7 @@
 	
 	if(@$_GET['id']!=""){
 		@$id_livre=$_GET['id'];
+		
 				
 			
 
