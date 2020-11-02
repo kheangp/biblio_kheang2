@@ -1,59 +1,11 @@
-<!--<DOCTYPE! html>
-
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<link href="../css/style.css" rel="stylesheet" >
-	</head>
-        <title>Liste des livres</title>
-
-        <meta charset='utf-8'>
-
-    </head>
-  
-    <body>
-
-     <h1>Liste des livres publiés</h1> 
-		
-	<div class="container">
-		<div class="row col-md-12 col-md-offset-2 ">
-			<!--
-			<table class="table table-striped custab"> 	
-				<thead>
-					<tr>
-						<th>ID livre</th>
-						<th>Nom Bibliotheque</th>
-						<th>Titre</th>
-						<th>Genre</th>
-						<th>Logo</th>
-						<th>Auteur</th>
-						<th>Editeur</th>
-						<th>Date de publication</th>
-						
-					</tr>
-				</thead>
-		<tbody>
-		</tbody>
-	</table>
-	-->
 
 
-
-	<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<!-- jQuery UI library -->
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 
 
 	<form action ="search" method="get" class="form-in-line">
 		<div class="input-group">
-			<input type="text" class="form-control" id="search_livre " placeholder="Titre du livre" name="search">
+			<input type="text" class="form-control" id="search_livre" placeholder="Titre du livre" name="search">
 			
 			<div class="input-group-append">
 					<button class="btn btn-outline-secondary" type="submit">Rechercher</button>
@@ -152,22 +104,23 @@
 
         ?>
 		
+	
+		
 	<script>
 
 
 
 $( document ).ready(function() {
 
-
 $("#search_livre").on('input',function(){
-alert('ok');})
+alert('ok');}); 
 
 	$("#search_livre").autocomplete({
 			source: "livres/livreapi.php",
 			select: function( event, ui ) {
 					event.preventDefault();
 					$("#search_livre").val(ui.item.value);
-			},
+			}
 
 	});
 });

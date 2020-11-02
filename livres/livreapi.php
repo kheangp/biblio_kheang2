@@ -1,8 +1,8 @@
 <?php
 	 
 	 
-	include "../includes/database.php";
-	include "../includes/functions.php";
+	//include "../includes/database.php";
+	//include "../includes/functions.php";
  
  /*
 	$titre = securisation(@$_GET['term']);
@@ -42,6 +42,7 @@
 
   echo $json;
   */
+  ?>
   <?php
 //phpinfo();
 include "../includes/database.php";
@@ -71,4 +72,4 @@ include "../includes/database.php";
 
 ?>
 
-?>
+
