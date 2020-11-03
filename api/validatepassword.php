@@ -1,4 +1,3 @@
-
 <?php
 
 include "../includes/database.php";
@@ -17,12 +16,7 @@ include "../includes/database.php";
 		
 	}
 	
-	
-	
-	
-	
-	
-	
+
 	
 	
 
