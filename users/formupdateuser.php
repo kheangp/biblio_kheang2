@@ -91,7 +91,7 @@ $pays=$result['pays'];
             </div>
 			 <div class="c100">
                 <label for="password">Mot de passe : </label>
-                <input type="text" id="password2" name="password2">
+                <input type="text" id="password" name="password">
             </div>
             <div class="c100" id="submit">
                 <input type="submit" value="Envoyer">

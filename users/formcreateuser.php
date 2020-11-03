@@ -5,7 +5,7 @@
 	
 	<!-- jQuery library -->
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
 	
 	<title>FORMULAIRE</title>
 	</head>
@@ -15,7 +15,7 @@
 	<div class="container  ">
 	<h1>Formulaire Ajout USER</h1>
 	<div class="row">
-		<div class="col-2"></div>
+		
 		
 		<div class="col border border-secondary">
 		
@@ -103,7 +103,7 @@
 
 
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script>
 
@@ -178,6 +178,7 @@ $(document).ready(function(){
 	{
 	 
 		var $password= $("#password").val();
+		
 		 
 	
 			$.ajax(	{ 
@@ -193,9 +194,9 @@ $(document).ready(function(){
 								if(resultat=="valid"){
 									//Mettre la bordure+ texte en vert
 									$("#password").css({color :'green', borderColor :'green'});
-									$('#error_password').html(" ");
+									$('#error_password').html("");
 								}
-								else if(resultat=="unvalid")
+								else 
 								{
 									//Mettre la bordure + texte en rouge
 										$("#password").css({color :'red', borderColor :'red'});

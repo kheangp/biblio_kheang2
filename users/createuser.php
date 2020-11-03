@@ -3,14 +3,14 @@
 include "../includes/database.php";
 
 
-		if(@$_POST['prenom']!="" && @$_POST['password2']!="" && @$_POST['mail']!="" )
+		if(@$_POST['prenom']!="" && @$_POST['password']!="" && @$_POST['mail']!="" )
 		{
 			$prenom =  $_POST['prenom'];
 			$mail =  $_POST['mail'];
 			$age =  $_POST['age'];
 			$sexe = $_POST['sexe'];
 			$pays = $_POST['pays'];
-			$password2 = $_POST['password2'];
+			$password = $_POST['password'];
 	   
 	   
             // $servername = 'localhost';
@@ -26,7 +26,7 @@ include "../includes/database.php";
            
 			
 			     $sql = "INSERT INTO user(prenom,email,age,sexe,pays,password,role)
-                        VALUES(:prenom,:mail,:age,:sexe,:pays,:password2,:administrateur)";
+                        VALUES(:prenom,:mail,:age,:sexe,:pays,:password,:administrateur)";
 						
 						$sth= $dbco->prepare($sql);
 						
@@ -37,7 +37,7 @@ include "../includes/database.php";
                                     ':age' => $age,
 									':sexe' => $sexe,
                                     ':pays' => $pays,
-									':password2' => $password2,
+									':password' => $password,
                                     ':administrateur' => "administrateur"];
 						
 						// $params=array(
